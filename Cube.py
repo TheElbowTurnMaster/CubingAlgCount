@@ -755,15 +755,15 @@ with open(file) as fp:
         count += 1
         scramble = re.sub('(\\d+\\))', '', scramble)
         scramble = re.sub('(.w.*)', '', scramble)
-        #cube.scramble(scramble)
-        #algs = cube.alg_count()
-        #total += algs
-        #alg_distribution[algs] += 1
+        cube.scramble(scramble)
+        algs = cube.alg_count()
+        total += algs
+        alg_distribution[algs] += 1
         cube = Cube()
-#for (key, value) in alg_distribution.items():
-#    print(str(key) + ": ", '{0:.3g}'.format(value / count * 100), "%")
-#print("Total:", count)
-#print("Average:", '{0:.4g}'.format(total / count))
+for (key, value) in alg_distribution.items():
+    print(str(key) + ": ", '{0:.3g}'.format(value / count * 100), "%")
+print("Total:", count)
+print("Average:", '{0:.4g}'.format(total / count))
 print("{:.3f}".format(time.time() - start_time), "seconds")
 
 
